@@ -131,3 +131,4 @@ priceInput.addEventListener('input', calculateFromPrice);
 resultInput.addEventListener('input', calculateFromResult);
 
 
+
