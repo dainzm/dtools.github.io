@@ -130,5 +130,15 @@ function calculateFromResult() {
 priceInput.addEventListener('input', calculateFromPrice);
 resultInput.addEventListener('input', calculateFromResult);
 
+// JavaScript для активации анимации при загрузке
+document.addEventListener('DOMContentLoaded', () => {
+    const panel = document.getElementById('mainPanel');
+    setTimeout(() => {
+        panel.classList.add('active');
+    }, 100); // Небольшая задержка для корректного отображения
+});
+
+
+
 
 
