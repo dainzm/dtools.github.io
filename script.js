@@ -132,3 +132,37 @@ resultInput.addEventListener('input', calculateFromResult);
 
 
 
+
+// Функция расчета
+function calculate() {
+    const input = document.getElementById('inputGold').value;
+    const resultDiv = document.querySelector('.result p:nth-child(2)');
+    
+    if (isNaN(input) || input <= 0) {
+        alert('Введите корректное число');
+        return;
+    }
+    
+    const commission = 0.2;
+    const finalAmount = input * (1 - commission);
+    
+    resultDiv.textContent = `Получите: ${finalAmount.toFixed(2)} голды`;
+}
+
+// Отключаем эффекты для мобильных устройств
+const isMobile = window.innerWidth <= 767;
+
+if (isMobile) {
+    // Здесь можно добавить дополнительные отключения эффектов
+    console.log('Мобильная версия активна');
+}
+
+// Добавляем обработчик изменения размера окна
+window.addEventListener('resize', () => {
+    const newIsMobile = window.innerWidth <= 767;
+    
+    if (newIsMobile !== isMobile) {
+        isMobile = newIsMobile;
+        console.log('Изменилась версия отображения');
+    }
+});
