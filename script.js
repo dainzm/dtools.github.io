@@ -107,7 +107,7 @@ function calculateFromPrice() {
     const price = parseFloat(priceInput.value);
     if (!isNaN(price)) {
         // Вычитаем 25 %
-        const result = price * 0.75;
+        const result = price * 0.80;
         resultInput.value = result.toFixed(2);
     } else {
         resultInput.value = '';
@@ -119,7 +119,7 @@ function calculateFromResult() {
     const result = parseFloat(resultInput.value);
     if (!isNaN(result)) {
         // Прибавляем 25 %
-        const price = result * 1.25;
+        const price = result * 1.20;
         priceInput.value = price.toFixed(2);
     } else {
         priceInput.value = '';
@@ -129,3 +129,4 @@ function calculateFromResult() {
 // Добавляем обработчики событий на изменение полей
 priceInput.addEventListener('input', calculateFromPrice);
 resultInput.addEventListener('input', calculateFromResult);
+
