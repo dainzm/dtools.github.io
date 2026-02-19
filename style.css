@@ -17,26 +17,10 @@ body {
     perspective: 1200px; 
 }
 
-/* Начальное состояние панели (сверху) */
-.panel {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0.5;
-    
-    /* Параметры анимации */
-    transition: 
-        transform 0.5s ease,
-        opacity 0.5s ease;
-}
+
 
 /* Конечное состояние (в центре) */
-.panel.active {
-    top: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-}
+
 
 
 .gradient-container {
@@ -81,6 +65,22 @@ body {
     transition: transform 0.1s ease-out;
     
     transform: translateZ(0) scale3d(1, 1, 1.3); 
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.5;
+
+.container.active {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+    
+    /* Параметры анимации */
+    transition: 
+        transform 0.5s ease,
+        opacity 0.5s ease;
 }
 
 
@@ -183,5 +183,6 @@ input::placeholder {
         min-width: auto;
     }
 }
+
 
 
